@@ -9,3 +9,5 @@ const Button = ({ children, onClick, variant = "primary" }) => {
     </button>
   );
 };
+
+export default Button;
