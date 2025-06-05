@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import Navbar from './Components/Navbar/Navbar'
+import './index.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    <Navbar searchData={[]}/>
+    <Navbar />
     </>
   );
 }
 
-export default App
+export default App;

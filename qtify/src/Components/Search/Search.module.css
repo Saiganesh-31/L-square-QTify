@@ -24,6 +24,10 @@
   height: 100%;
 }
 
+.searchButton svg {
+  fill: var(--color-black);
+}
+
 .listElement {
   padding: 15px;
   display: flex;
