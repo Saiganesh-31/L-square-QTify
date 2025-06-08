@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Card.module.css";
 import Chip from "@mui/material/Chip";
 import { Typography, Card, CardMedia, CardContent } from "@mui/material";
 
