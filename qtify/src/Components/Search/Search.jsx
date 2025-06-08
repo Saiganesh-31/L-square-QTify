@@ -21,7 +21,7 @@ function Search({ searchData, placeholder }) {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", width: "500px", backgroundColor: "var(--color-white)", borderRadius: "8px" }}>
       <Autocomplete
         options={searchData || []}
         getOptionLabel={(option) => option.title}
