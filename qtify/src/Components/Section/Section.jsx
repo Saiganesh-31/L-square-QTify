@@ -6,7 +6,7 @@ import CardComponent from "../Card/CardComponent.jsx";
 import Carousel from "../Carousel/Carousel";
 import axios from "axios";
 
-const Section = ({title, apiUrl, data, isSongSection = false}) => {
+const Section = ({title, apiUrl, data, isSongSection = false, navigationId}) => {
   const [showAll, setShowAll] = useState(false);
   const [albums, setAlbums] = useState([]);
 
@@ -55,6 +55,7 @@ const Section = ({title, apiUrl, data, isSongSection = false}) => {
           <Carousel
            items={albums}
            renderComponent={(album) => <CardComponent album={album} isSongSection={isSongSection}/>}
+           navigationId={navigationId}
           />
       )}
     </Box>

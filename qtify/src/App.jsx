@@ -12,8 +12,8 @@ function App() {
     <Navbar />
     <Hero />
     {/* <CardComponent /> */}
-    <Section title="Top Albums" apiUrl={"https://qtify-backend-labs.crio.do/albums/top"}/>
-    <Section title="New Albums" apiUrl={"https://qtify-backend-labs.crio.do/albums/new"}/>
+    <Section title="Top Albums" apiUrl={"https://qtify-backend-labs.crio.do/albums/top"} navigationId="top-albums"/>
+    <Section title="New Albums" apiUrl={"https://qtify-backend-labs.crio.do/albums/new"} naviagtionId="new-albums"/>
     <SongsSection />
     </>
   );

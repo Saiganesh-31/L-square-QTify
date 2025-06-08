@@ -17,11 +17,11 @@
   background-color: var(--color-white);
 }
 
-.custom-swiper-prev {
+[class^="custom-swiper-prev-"] {
   left: 0;
 }
 
-.custom-swiper-next {
+[class^="custom-swiper-next-"] {
   right: 0;
 }
 

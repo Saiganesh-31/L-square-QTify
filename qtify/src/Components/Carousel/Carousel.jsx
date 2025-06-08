@@ -8,15 +8,10 @@ import rightArrow from "../../assets/right_arrow.svg";
 import "../Carousel/Carousel.css";
 
 function Carousel ({items, renderComponent, navigationId}) {
+    const prevClass = `custom-swiper-prev-${navigationId}`;
+    const nextClass = `custom-swiper-next-${navigationId}`;
     return (
         <div style={{ position: "relative", padding: "1rem 2rem" }}>
-            <button className="custom-swiper-prev nav-btn">
-                <img src={leftArrow} alt="Previous" />
-            </button>
-            <button className="custom-swiper-next nav-btn">
-                <img src={rightArrow} alt="Next" />
-            </button>
-
         <Swiper
             modules={[Navigation]}
             spaceBetween={16}
@@ -27,8 +22,8 @@ function Carousel ({items, renderComponent, navigationId}) {
                 1200: {slidesPerView: 7},
             }}
             navigation={{
-            nextEl: ".custom-swiper-next",
-            prevEl: ".custom-swiper-prev",
+            nextEl: `.${nextClass}`,
+            prevEl: `.${prevClass}`,
           }}
         >
             {items.map((item) => (
@@ -37,6 +32,13 @@ function Carousel ({items, renderComponent, navigationId}) {
                 </SwiperSlide>
             ))}
         </Swiper>
+
+        <button className={`${prevClass} nav-btn`}>
+            <img src={leftArrow} alt="Previous" />
+        </button>
+        <button className={`${nextClass} nav-btn`}>
+            <img src={rightArrow} alt="Next" />
+        </button>
         </div>
     );
 }

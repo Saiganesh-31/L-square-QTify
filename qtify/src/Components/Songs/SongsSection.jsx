@@ -88,6 +88,7 @@ function SongsSection () {
                 apiUrl=""
                 data={filteredSongs}
                 isSongSection={true}
+                navigationId="songs"
             />
         </Box>
      );
