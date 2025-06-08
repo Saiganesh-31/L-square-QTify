@@ -3,8 +3,8 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import leftArrow from "../../Assets/left_arrow.svg";
-import rightArrow from "../../Assets/right_arrow.svg";
+import leftArrow from "../../assets/left_arrow.svg";
+import rightArrow from "../../assets/right_arrow.svg";
 import "../Carousel/Carousel.css";
 
 function Carousel ({items, renderComponent}) {
