@@ -6,11 +6,15 @@ import CardComponent from "../Card/CardComponent.jsx";
 import Carousel from "../Carousel/Carousel";
 import axios from "axios";
 
-const Section = ({title, apiUrl}) => {
+const Section = ({title, apiUrl, data, isSongSection = false}) => {
   const [showAll, setShowAll] = useState(false);
   const [albums, setAlbums] = useState([]);
 
   useEffect(() => {
+    if (isSongSection) {
+      setAlbums(data);
+    }
+    else {
     const fetchAlbums = async () => {
       try {
         const response = await axios.get(apiUrl);
@@ -18,11 +22,10 @@ const Section = ({title, apiUrl}) => {
       } catch (error) {
         console.error("Error fetching albums:", error);
       }
-    }
-
+    };
     fetchAlbums();
-
-  }, [apiUrl]);
+    }
+  }, [apiUrl, data, isSongSection]);
 
   return (
     <Box sx={{backgroundColor: "var(--color-black)", py: 1, px: 2}}>
@@ -30,28 +33,28 @@ const Section = ({title, apiUrl}) => {
         <Typography variant="h6" sx={{color: "var(--color-white)", fontWeight: 600, px: 2}}>
           {title}
         </Typography>
-        <Button onClick={() => setShowAll(!showAll)} sx={{
+        {isSongSection && (<Button onClick={() => setShowAll(!showAll)} sx={{
           textTransform: "none", 
           color: "var(--color-primary)", 
           fontWeight: 500, 
           fontSize: "14px"
           }}>
             {showAll ? "Collapse" : "Show All"}
-        </Button>
+        </Button>)}
       </Box>
 
-      {showAll ? (
+      {showAll && !isSongSection ? (
         <Grid container spacing={2}>
           {albums.map((album) => (
             <Grid item xs={6} sm={4} md={2} key={album.id}>
-              <CardComponent album={album} />
+              <CardComponent album={album} isSongSection={isSongSection}/>
             </Grid>
           ))}
         </Grid>
       ) : (
           <Carousel
            items={albums}
-           renderComponent={(album) => <CardComponent album={album} />}
+           renderComponent={(album) => <CardComponent album={album} isSongSection={isSongSection}/>}
           />
       )}
     </Box>

@@ -7,7 +7,7 @@ import leftArrow from "../../assets/left_arrow.svg";
 import rightArrow from "../../assets/right_arrow.svg";
 import "../Carousel/Carousel.css";
 
-function Carousel ({items, renderComponent}) {
+function Carousel ({items, renderComponent, navigationId}) {
     return (
         <div style={{ position: "relative", padding: "1rem 2rem" }}>
             <button className="custom-swiper-prev nav-btn">
