@@ -33,7 +33,7 @@ const Section = ({title, apiUrl, data, isSongSection = false}) => {
         <Typography variant="h6" sx={{color: "var(--color-white)", fontWeight: 600, px: 2}}>
           {title}
         </Typography>
-        {isSongSection && (<Button onClick={() => setShowAll(!showAll)} sx={{
+        {!isSongSection && (<Button onClick={() => setShowAll(!showAll)} sx={{
           textTransform: "none", 
           color: "var(--color-primary)", 
           fontWeight: 500, 
